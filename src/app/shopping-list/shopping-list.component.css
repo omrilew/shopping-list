@@ -1,0 +1,77 @@
+.col-1 {
+    padding: 10px;
+    margin-right: 15px;
+    background-color: rgb(241, 241, 241);
+    max-width: 4%;
+}
+
+.card {
+    border-radius: 0;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-top: 7px;
+}
+
+.flex-item {
+    order: 0;
+}
+
+mat-grid-list {
+    height: 1000px;
+    overflow: auto;
+}
+
+mat-grid-tile {
+    outline: none;
+    height: 100%;
+}
+
+cdk-drop-list {
+    height: 100%;
+    width: 100%;
+}
+
+.cdk-drag-preview, mat-card {
+    height: 95%;
+    width: 95%;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+mat-card:hover {
+    transform: scale(1.01);
+}
+
+mat-card-title {
+    height: 20%;
+    border: 2px #6a63dd solid;
+    margin: 0;
+}
+
+mat-card-content {
+    overflow: auto;
+    padding: 10px;
+    height: 80%;
+    background-color: #f5f4e9;
+    outline: none;
+    margin: 0;
+}
+
+.mat-menu-item {
+    outline: none;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}

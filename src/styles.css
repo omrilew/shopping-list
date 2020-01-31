@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+/* @import '@angular/material/prebuilt-themes/pink-bluegrey.css'; */
+
+/* @import '@angular/material/prebuilt-themes/purple-green.css'; */
+
+.btn-primary {
+    background-color: #6a63dd;
+    border: 1px darkslategray solid;
+}
+
+.btn-secondary {
+    background-color: #f5f4e9;
+    border: 1px darkslategray solid;
+    color: black;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

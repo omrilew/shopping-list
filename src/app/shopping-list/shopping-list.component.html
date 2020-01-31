@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="row">
+        <div class="col">
+            <div class="flex-box">
+                <h3 class="flex-item"> {{ listName }}</h3>
+                <button mat-icon-button
+                        class=" item btn-primary rounded"
+                        [matMenuTriggerFor]="menu"
+                        aria-label="Example icon-button with a menu">
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item
+                        (click)="addItemClicked()">
+                    <mat-icon>playlist_add</mat-icon>
+                    <span>Add Product</span>
+                </button>
+                <button mat-menu-item
+                        (click)="clearProductsClicked()">
+                    <mat-icon>clear_all</mat-icon>
+                    <span>Clear List</span>
+                </button>
+            </mat-menu>
+            <mat-grid-list cdkDropList
+                           cdkDropListOrientation="horizontal"
+                           [(cdkDropListData)]="typeList"
+                           (cdkDropListDropped)="drop($event)"
+                           cols="4"
+                           rowHeight="300px">
+                <mat-grid-tile *ngFor="let type of typeList; let i=index;"
+                               (mouseleave)="exit(i)"
+                               (mouseenter)="enter(i)"
+                               cdkDrag>
+
+                    <mat-card>
+                        <mat-card-title [style.background]="'#6a63dd'"
+                                        class="rounded"
+                                        class="rounded-top">
+                            {{ type }}
+                        </mat-card-title>
+                        <mat-card-content class="rounded-bottom">
+                            <mat-selection-list cdkDropList
+                                                (cdkDropListDropped)="dropProduct($event, type)">
+                                <mat-list-option cdkDrag
+                                                 *ngFor="let product of products[type]"
+                                                 [(selected)]="product.IsChecked"
+                                                 cdkDragBoundary="mat-selection-list">
+                                    {{ product.Name }}
+                                </mat-list-option>
+                            </mat-selection-list>
+                        </mat-card-content>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+
+</div>
