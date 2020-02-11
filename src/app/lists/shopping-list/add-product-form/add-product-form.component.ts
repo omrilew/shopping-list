@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
-import { Product } from '../list-item/product';
-import { resolve } from 'url';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-add-product-form',

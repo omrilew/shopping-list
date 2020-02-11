@@ -28,8 +28,7 @@
                            (cdkDropListDropped)="drop($event)"
                            cols="4"
                            rowHeight="300px">
-                <mat-grid-tile *ngFor="let type of typeList; let i=index;"
-                               (mouseleave)="exit(i)"
+                <mat-grid-tile *ngFor="let type of shoppingList.typeList; let i=index;"
                                (mouseenter)="enter(i)"
                                cdkDrag>
 
@@ -43,7 +42,7 @@
                             <mat-selection-list cdkDropList
                                                 (cdkDropListDropped)="dropProduct($event, type)">
                                 <mat-list-option cdkDrag
-                                                 *ngFor="let product of products[type]"
+                                                 *ngFor="let product of shoppingList.products[type]"
                                                  [(selected)]="product.IsChecked"
                                                  cdkDragBoundary="mat-selection-list">
                                     {{ product.Name }}

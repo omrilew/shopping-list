@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="row">
+        <div class="col">
+            <div class="flex-box">
+                <h3 class="flex-item">List of Lists</h3>
+                <button mat-icon-button
+                        class=" item btn-primary rounded"
+                        [matMenuTriggerFor]="menu"
+                        aria-label="Example icon-button with a menu">
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item
+                        (click)="addNewListClicked()">
+                    <mat-icon>playlist_add</mat-icon>
+                    <span>Add Product</span>
+                </button>
+                <button mat-menu-item
+                        (click)="clearListsClicked()">
+                    <mat-icon>clear_all</mat-icon>
+                    <span>Clear List</span>
+                </button>
+            </mat-menu>
+            <mat-selection-list cdkDropList
+                                (cdkDropListDropped)="dropProduct($event)">
+                <mat-list-option cdkDrag
+                                 *ngFor="let list of lists">
+                    <a routerLink="shopping-list"
+                        (click)="currentListService.activeList = list">
+                        {{ list.name }}
+                    </a>
+                </mat-list-option>
+            </mat-selection-list>
+
+        </div>
+    </div>
+
+</div>

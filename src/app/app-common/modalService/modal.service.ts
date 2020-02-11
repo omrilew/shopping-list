@@ -1,7 +1,5 @@
-import { Injectable, Component, Input } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { AddProductFormComponent } from '../shopping-list/add-product-form/add-product-form.component';
-import { Product } from '../shopping-list/list-item/product';
+import { Injectable } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root'

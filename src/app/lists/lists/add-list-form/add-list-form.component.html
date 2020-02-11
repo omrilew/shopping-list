@@ -1,0 +1,26 @@
+<form #form="ngForm"
+      (ngSubmit)="onSubmit(form)">
+    <div class="modal-header-sm">
+        <h4 class="modal-title"
+            style="text-align: center; margin: 10px">Add Product</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <input type="text"
+                   placeholder="List Name"
+                   class="form-control"
+                   id="inputListName"
+                   name="listName"
+                   required
+                   ngModel>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit"
+                class="btn btn-primary"
+                [disabled]="!form.form.valid">Add</button>
+        <button type="button"
+                class="btn btn-secondary"
+                (click)="activeModal.close('Close click')">Close</button>
+    </div>
+</form>
